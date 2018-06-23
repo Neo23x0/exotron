@@ -62,14 +62,6 @@ auditpol /set /subcategory:"Kerberos Service Ticket Operations" /success:enable 
 auditpol /set /subcategory:"Other Account Logon Events" /success:enable /failure:enable
 auditpol /set /subcategory:"Kerberos Authentication Service" /success:enable /failure:enable
 
-:: SYSMON
-ECHO --------------------------------------------------
-ECHO Installing Sysmon
-timeout /t 2
-
-Sysmon\Sysmon.exe -u
-Sysmon\Sysmon.exe -accepteula -i Sysmon\sysmonconfig-export.xml
-
 :: CLEAR EVENTLOGS
 ECHO --------------------------------------------------
 ECHO Clearing Eventlogs
@@ -80,17 +72,21 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\Clear-Eventlog.ps1 -Lo
 powershell -NoProfile -ExecutionPolicy Bypass -File tools\Clear-Eventlog.ps1 -LogName Application
 REM powershell -NoProfile -ExecutionPolicy Bypass -File tools\Clear-Eventlog.ps1 -LogName "Microsoft-Windows-Sysmon/Operational"
 
+:: SYSMON
+ECHO --------------------------------------------------
+ECHO Installing Sysmon
+
+Sysmon\Sysmon.exe -u
+Sysmon\Sysmon.exe -accepteula -i Sysmon\sysmonconfig-export.xml
 
 :: SAMPLE EXECUTION
 ECHO --------------------------------------------------
 ECHO Executing samples in sub directory ./samples
-timeout /t 2
 for %%i in (samples\*) do %%i
 
 :: EVENTLOG EXPORT
 ECHO --------------------------------------------------
 ECHO Exporting Eventlogs
-timeout /t 2
 
 powershell -NoProfile -ExecutionPolicy Bypass -File tools\Export-Eventlog.ps1 -LogName Security -Destination C:\eventlog-security.csv
 powershell -NoProfile -ExecutionPolicy Bypass -File tools\Export-Eventlog.ps1 -LogName System -Destination C:\eventlog-system.csv
