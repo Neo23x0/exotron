@@ -15,6 +15,10 @@ This is what happens in the current PoC like version:
 4. Runs samples in a `.\samples` sub directory (of the SFX)
 5. Exports the Eventlog and Sysmon entries as CSV to files on disk (which can then be downloaded as "dropped files")
 
+# Sample Reports
+
+[Any.run report on Thrip sample (named evil1.exe)](https://app.any.run/tasks/a41cf454-93d5-4d58-9fc8-ca50dbb6c30e)
+
 # Downsides / Todo's
 
 - The report will be a mess as it contains all processes that the exotron wrapper has caused in the session
