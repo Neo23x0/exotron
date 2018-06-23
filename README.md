@@ -15,6 +15,11 @@ This is what happens in the current PoC like version:
 4. Runs samples in a `.\samples` sub directory (of the SFX)
 5. Exports the Eventlog and Sysmon entries as CSV to files on disk (which can then be downloaded as "dropped files")
 
+# Downsides / Todo's
+
+- The report will be a mess as it contains all processes that the exotron wrapper has caused in the session
+- Filter some of the actions caused by ExoTron from the eventlogs during the export
+
 # Getting started
 
 1. Download Sysmon from the Microsoft [website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon) and place it in the folder `.\Sysmon`
