@@ -3,7 +3,7 @@ Sandbox Feature Upgrader
 
 # What it does
 
-It's so sad that big sandbox vendors do not provide the information that a blue teamer would like to see in the reports. For me it was always important to see Windows Eventlog events in these reports. The sandboxes that I use do not provide this feature. So I decided to add that feature to the samples that I drop in form of a wrapper. 
+It's so sad that big sandbox vendors do not provide the information that a blue teamer would like to see in the reports. For me it was always important to see Windows Eventlog events in these reports - especially to create [Sigma](https://github.com/Neo23x0/sigma) rules. The sandboxes that I use do not provide this feature. So I decided to add that feature to the samples that I drop in form of a wrapper. 
 
 Exotron wraps the sample in a set of commands that run before and after the sample exeuction. 
 
@@ -23,7 +23,7 @@ This is what happens in the current PoC like version:
 
 - The report will be a mess as it contains all processes that the exotron wrapper has caused in the session
 - Filter some of the actions caused by ExoTron from the eventlogs during the export
-- Only support executable files as samples at the moment
+- Only supports executable files as samples at the moment
 
 # Getting started
 
