@@ -19,6 +19,7 @@ This is what happens in the current PoC like version:
 
 - The report will be a mess as it contains all processes that the exotron wrapper has caused in the session
 - Filter some of the actions caused by ExoTron from the eventlogs during the export
+- Only support executable files as samples at the moment
 
 # Getting started
 
