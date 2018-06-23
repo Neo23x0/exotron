@@ -10,8 +10,8 @@ Exotron wraps the sample in a set of commands that run before and after the samp
 This is what happens in the current PoC like version:
 
 1. Activates all event types in the local audit policy of the Windows system
-2. Installs Sysmon (yeah!)
-3. Clears the current eventlog entries in Security, Applicaion, System, Sysmon
+2. Clears the current eventlog entries in Security, Applicaion, System
+3. Installs Sysmon (yeah!)
 4. Runs samples in a `.\samples` sub directory (of the SFX)
 5. Exports the Eventlog and Sysmon entries as CSV to files on disk (which can then be downloaded as "dropped files")
 
